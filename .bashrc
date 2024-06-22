@@ -75,6 +75,8 @@ fi
 
 export PATH="$PATH:/home/locke/.local/bin"
 export PATH="$PATH:/opt/nvim-linux64/bin"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+if [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 eval "$(fzf --bash)"
 export PATH=$PATH:/home/locke/.spicetify

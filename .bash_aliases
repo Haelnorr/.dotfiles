@@ -18,4 +18,4 @@ alias la='ls -A'
 alias vim=nvim
 alias vi=nvim
 
-alias dotfiles='/usr/bin/git --git-dir=/home/locke/.dotfiles --work-tree=/home/locke'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'

@@ -6,7 +6,7 @@ font pango:JetBrainsMonoNerdFont 14
 exec --no-startup-id picom --no-fading-openclose
 exec --no-startup-id feh --bg-fill ~/.wallpapers/1 --bg-fill ~/.wallpapers/2 --bg-fill ~/.wallpapers/3
 exec --no-startup-id xrdb -merge ~/.Xresources
-exec_always --no-startup-id setxkbmap -option ctrl:nocaps
+exec_always --no-startup-id setxkbmap -option caps:escape,shift:both_capslock
 
 exec_always killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh

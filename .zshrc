@@ -1,4 +1,5 @@
 # Lines configured by zsh-newuser-install
+clear
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=10000
@@ -23,4 +24,4 @@ source <(fzf --zsh)
 export STARSHIP_CONFIG="$HOME/.config/starship/config.toml"
 eval "$(starship init zsh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
+neofetch

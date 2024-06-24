@@ -1,2 +1,2 @@
-setxkbmap -option caps:escape
+numlockx &
 exec i3

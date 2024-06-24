@@ -4,18 +4,16 @@ set $mod Mod4
 font pango:JetBrainsMonoNerdFont 14
 
 exec --no-startup-id picom --no-fading-openclose
-exec --no-startup-id feh --bg-scale ~/.wallpapers/active.png
+exec --no-startup-id feh --bg-fill ~/.wallpapers/1 --bg-fill ~/.wallpapers/2 --bg-fill ~/.wallpapers/3
 exec --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 
 exec_always killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 
-
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
-
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -64,12 +62,6 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
-
-# split in horizontal orientation
-bindsym $mod+percent split h
-
-# split in vertical orientation
-bindsym $mod+quotedbl split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle

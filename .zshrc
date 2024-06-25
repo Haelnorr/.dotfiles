@@ -16,7 +16,7 @@ export EDITOR=nvim
 
 alias cp='cp --reflink=auto'
 alias grep='grep --color=auto'
-alias ls='ls --color=auto --file-type'
+alias ls='eza --color=always --long --git --icons=always --no-time --no-user --no-permissions'
 alias cat=bat
 export BAT_THEME="Catppuccin Mocha"
 alias vim=nvim
@@ -38,6 +38,21 @@ _fzf_compgen_path() {
 
 _fzf_compgen_dir() {
     fd --type=d --hidden --exclude .git . "$1"
+}
+
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
+
+_fzf_comprun() {
+    local command=$1
+    shift
+
+    case "$command" in
+        cd)             fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+        export|unset)   fzf --preview "eval 'echo $'{}" "$@" ;;
+        ssh)            fzf --preview 'dig {}' "$@" ;;
+        *)              fzf --preview 'bat -n --color=always --line-range :500 {}' "$@" ;;
+    esac
 }
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

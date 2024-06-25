@@ -185,3 +185,6 @@ client.unfocused        $overlay0   $base   $text       $rosewater      $overlay
 client.urgent           $peach      $base   $peach      $overlay0       $peach
 client.placeholder      $overlay0   $base0  $text       $overlay0       $overlay0
 client.background       $base
+
+bindsym $mod+Shift+period exec systemctl suspend
+bindsym $mod+Shift+slash exec systemctl hibernate

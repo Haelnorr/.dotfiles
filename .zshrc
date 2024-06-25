@@ -43,6 +43,9 @@ _fzf_compgen_dir() {
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 export STARSHIP_CONFIG="$HOME/.config/starship/config.toml"
-eval "$(starship init zsh)"
-
+# Check that the function `starship_zle-keymap-select()` is defined.
+# xref: https://github.com/starship/starship/issues/3418
+type starship_zle-keymap-select >/dev/null || {
+    eval "$(starship init zsh)"
+}
 neofetch

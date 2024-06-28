@@ -63,4 +63,6 @@ export STARSHIP_CONFIG="$HOME/.config/starship/config.toml"
 type starship_zle-keymap-select >/dev/null || {
     eval "$(starship init zsh)"
 }
+export PATH="$PATH:$HOME/.local/bin"
 neofetch
+alias movies="movie; exit"

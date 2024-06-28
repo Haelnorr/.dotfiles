@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+CWD=$1
+if [ $# -eq 0 ]; then
+    CWD=$PWD
+fi
+find $CWD -type f | perl -ne 'print $1 if m/\.([^.\/]+)$/' | sort -u

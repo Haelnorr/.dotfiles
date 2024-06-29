@@ -6,7 +6,7 @@ font pango:JetBrainsMonoNerdFont 14
 exec --no-startup-id picom --no-fading-openclose
 exec --no-startup-id feh --bg-fill ~/.wallpapers/1 --bg-fill ~/.wallpapers/2 --bg-fill ~/.wallpapers/3
 exec --no-startup-id xrdb -merge ~/.Xresources
-exec --no-startup-id setxkbmap -option caps:escape,shift:both_capslock
+exec_always --no-startup-id setxkbmap -option caps:escape,shift:both_capslock
 exec --no-startup-id xset s off -dpms
 exec --no-startup-id export GTK_THEME="catppuccin-mocha-green-standard+default"
 
@@ -81,6 +81,9 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+
+bindsym $mod+z split h
+bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle

@@ -55,8 +55,6 @@ _fzf_comprun() {
     esac
 }
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
 export STARSHIP_CONFIG="$HOME/.config/starship/config.toml"
 # Check that the function `starship_zle-keymap-select()` is defined.
 # xref: https://github.com/starship/starship/issues/3418

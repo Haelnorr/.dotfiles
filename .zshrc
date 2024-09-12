@@ -22,6 +22,7 @@ export BAT_THEME="Catppuccin Mocha"
 alias vim=nvim
 alias vi=nvim
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias top=btop
 
 eval "$(fzf --zsh)"
 export FZF_DEFAULT_OPTS=" \

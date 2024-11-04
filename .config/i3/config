@@ -14,6 +14,9 @@ exec --no-startup-id export GTK_THEME="catppuccin-mocha-green-standard+default"
 exec_always killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 
+# rebind down arrow to left click (for osrs spam)
+#bindsym Down exec xdotool click 1
+
 bindsym Print exec maim "$HOME/pictures/screenshots/$(date).png"
 bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "$HOME/pictures/screenshots/$(date).png"
 bindsym Shift+Print exec maim --select "$HOME/pictures/screenshots/$(date).png"

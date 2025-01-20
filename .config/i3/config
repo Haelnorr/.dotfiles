@@ -17,14 +17,21 @@ exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 # rebind down arrow to left click (for osrs spam)
 #bindsym Down exec xdotool click 1
 
-bindsym Print exec maim "$HOME/pictures/screenshots/$(date).png"
-bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "$HOME/pictures/screenshots/$(date).png"
-bindsym Shift+Print exec maim --select "$HOME/pictures/screenshots/$(date).png"
+## Screenshots
+# Clip selection to clipboard
+bindsym Print exec maim --select | xclip -selection clipboard -t image/png
+# Clip active window to clipboard
+bindsym $mod+Print exec maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+# Clip all windows to clipboard
+bindsym Shift+Print exec maim | xclip -selection clipboard -t image/png
 
 ## Clipboard Screenshots
-bindsym Ctrl+Print exec maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+$mod+Print exec maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec maim --select | xclip -selection clipboard -t image/png
+# Save selection to file
+bindsym Ctrl+Print exec maim --select "$HOME/pictures/screenshots/$(date).png"
+# Save active window to file
+bindsym Ctrl+$mod+Print exec maim --window $(xdotool getactivewindow) "$HOME/pictures/screenshots/$(date).png"
+# Save all windows to file
+bindsym Ctrl+Shift+Print exec maim "$HOME/pictures/screenshots/$(date).png"
 
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork

@@ -3,7 +3,6 @@ clear
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=10000
-bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/haelnorr/.zshrc'
@@ -11,6 +10,9 @@ zstyle :compinstall filename '/home/haelnorr/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+bindkey -v
 
 export EDITOR=nvim
 
@@ -23,6 +25,7 @@ alias vim=nvim
 alias vi=nvim
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias top=btop
+alias movies="movie; exit"
 
 eval "$(fzf --zsh)"
 export FZF_DEFAULT_OPTS=" \
@@ -64,4 +67,3 @@ type starship_zle-keymap-select >/dev/null || {
 }
 export PATH="$PATH:$HOME/.local/bin"
 neofetch
-alias movies="movie; exit"

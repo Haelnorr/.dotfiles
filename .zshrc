@@ -11,7 +11,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
 bindkey -v
 
 export EDITOR=nvim
@@ -24,10 +24,7 @@ export BAT_THEME="Catppuccin Mocha"
 alias vim=nvim
 alias vi=nvim
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias top=btop
-alias movies="movie; exit"
 
-eval "$(fzf --zsh)"
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
@@ -59,14 +56,7 @@ _fzf_comprun() {
     esac
 }
 
-export STARSHIP_CONFIG="$HOME/.config/starship/config.toml"
-# Check that the function `starship_zle-keymap-select()` is defined.
-# xref: https://github.com/starship/starship/issues/3418
-type starship_zle-keymap-select >/dev/null || {
-    eval "$(starship init zsh)"
-}
 # My custom scripts
 export PATH="$PATH:$HOME/.local/bin"
-# Compiled go binaries
-export PATH="$PATH:$HOME/go/bin"
-neofetch
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export PATH="$PATH:/usr/local/go/bin"

@@ -26,6 +26,8 @@ alias vi=nvim
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias top=btop
 alias movies="movie; exit"
+alias ccp='xclip -selection clipboard <'
+
 
 eval "$(fzf --zsh)"
 export FZF_DEFAULT_OPTS=" \

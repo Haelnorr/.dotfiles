@@ -7,6 +7,7 @@ exec --no-startup-id picom --no-fading-openclose
 exec --no-startup-id feh --bg-fill ~/.wallpapers/1 --bg-fill ~/.wallpapers/2 --bg-fill ~/.wallpapers/3
 exec --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id setxkbmap -option caps:escape,shift:both_capslock
+exec_always xmousepasteblock
 exec --no-startup-id xset s off -dpms
 exec --no-startup-id export GTK_THEME="catppuccin-mocha-green-standard+default"
 
